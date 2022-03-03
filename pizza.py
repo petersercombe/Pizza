@@ -1,39 +1,25 @@
 # Hello Pizza Shop
-
-
-def listLooper(list):
-    for option in list:
-        print(list.index(option), "-", option)
-
-def inputNumber(prompt, list):
-    while True:
-        try:
-            userInput = int(input(prompt))
-        except ValueError:
-            print("Please enter a valid number")
-            continue
-        else:
-            if userInput < len(list) and userInput >= 0:
-                return userInput
-            else:
-                print("Choice entered is outside the range of options. Please try again.")
-                continue
-
+from myUtils import *
 
 print("Welcome to Pete's Uhh Emporium")
 
 # Choose a size
 sizeOptions = ["Small", "Medium", "Large", "X-Large"]
-print("Size options: ")
-listLooper(sizeOptions) # Calls our listLooper function for the sizeOptions list
-sizeChoice = inputNumber("Enter the number of your size choice (e.g. '2'): ", sizeOptions)
+sizeChoice = choice("Size", sizeOptions)
 
 # Choose a topping
 toppingOptions = ["Meatlovers", "Hawaiian", "Triple Cheese and Bacon"]
-print ("Topping options: ")
-listLooper(toppingOptions)
-toppingChoice = inputNumber("Enter the number of your topping choice: ", toppingOptions)
+toppingChoice = choice("Topping", toppingOptions)
 
+# Choose a drink
+drinkOptions = ["Coca Cola", "Fanta", "Bundaberg Ginger Beer", "No Drink"]
+drinkChoice = choice("Drink", drinkOptions)
 
+# Choose a side
+sideOptions = ["Garlic Bread", "Hot Fudge", "Churros", "Mini Dutch Pancakes"]
+sideChoice = choice("Side", sideOptions)
 
-print("You have ordered a", sizeOptions[sizeChoice], toppingOptions[toppingChoice])
+print("You have ordered:")
+print(sizeOptions[sizeChoice], toppingOptions[toppingChoice])
+print(drinkOptions[drinkChoice])
+print(sideOptions[sideChoice])
