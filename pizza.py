@@ -5,11 +5,14 @@ print("Welcome to Pete's Uhh Emporium")
 
 sizeChoice = []
 toppingChoice = []
+price = 0.00
 
 while True:
     # Choose a size
-    sizeOptions = ["Small", "Medium", "Large", "X-Large"]
-    sizeChoice.append(choice("Size", sizeOptions))
+    sizeOptions = [("Small", 2.00), ("Medium", 3.00), ("Large", 5.00), ("X-Large", 8.00)]
+    userEntry = choice("Size", sizeOptions)
+    sizeChoice.append(userEntry)
+    price += sizeOptions[userEntry][1]
 
     # Choose a topping
     toppingOptions = ["Meatlovers", "Hawaiian", "Triple Cheese and Bacon"]
@@ -48,3 +51,5 @@ for choice in drinkChoice:
     print(drinkOptions[drinkChoice[drinkChoice.index(choice)]])
 
 print(sideOptions[sideChoice])
+
+# print the price out later.

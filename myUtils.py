@@ -1,6 +1,6 @@
 def listLooper(list):
     for option in list:
-        print(list.index(option), "-", option)
+        print("{} - {} | ${:.2f}".format(list.index(option), option[0], option[1]))
 
 def inputNumber(prompt, list):
     while True:
